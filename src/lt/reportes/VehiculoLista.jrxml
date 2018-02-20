@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0dc5af2-0a3a-4d5f-acfb-cb09e32e1994">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Orden" class="java.lang.String"/>
+	<field name="marca" class="java.lang.String"/>
+	<field name="modelo" class="java.lang.String"/>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="propietario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="369" y="59" width="74" height="20" uuid="3f6d869a-7bc2-4352-a214-5c70d3462c36"/>
+				<text><![CDATA[Ordenado por:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="443" y="59" width="100" height="20" uuid="787e2970-783d-49ae-a804-8502b3a0f8bd"/>
+				<textFieldExpression><![CDATA[$P{Orden}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yy">
+				<reportElement x="455" y="0" width="59" height="20" uuid="fb080df0-2e59-4270-ae97-c1e21ccc67b0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="0" width="69" height="20" uuid="f8bcdab5-aee7-47e9-ba2c-9b8de25c9197"/>
+				<text><![CDATA[Fecha y hora:]]></text>
+			</staticText>
+			<textField pattern="HH.mm">
+				<reportElement x="514" y="0" width="41" height="20" uuid="380f0857-eda8-458a-a720-5d4493f76817"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="17" y="0" width="284" height="79" uuid="115f3f59-d454-426e-a961-fd8aa4f44301"/>
+				<imageExpression><![CDATA["/home/brother/NetBeansProjects/JavaFXm/LtNw/src/lt/reportes/gearReport.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="181" y="10" width="188" height="25" uuid="96e37e38-4a49-40f6-af16-39d429c4bbbc"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Listado de Vehículos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="86" y="2" width="100" height="20" uuid="dd78b3ce-6bb1-48c8-b86b-526e5a3e6c07"/>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="2" width="100" height="20" uuid="76124e29-dc5b-43ed-ad78-90a88d120ed0"/>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="2" width="100" height="20" uuid="34a3cc8a-96a2-4e70-a4fe-b6121c7574d1"/>
+				<text><![CDATA[Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="2" width="100" height="20" uuid="682662a8-d510-4f6c-bcde-6f09773dab8d"/>
+				<text><![CDATA[Propietario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="86" height="20" uuid="77da98d0-55e3-460a-b8d5-3a380e670415"/>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="86" y="0" width="100" height="20" uuid="e9df0902-c201-4138-9c6d-79989d8e9e2f"/>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="100" height="20" uuid="b13b91b9-8e8f-4c34-97b7-60328d784a94"/>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="0" width="100" height="20" uuid="611d146c-44ae-4b14-b2e6-439cf4a7d383"/>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="0" width="100" height="20" uuid="7ec2020f-fb40-4379-b599-2c7242b10a5c"/>
+				<textFieldExpression><![CDATA[$F{propietario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="70" height="20" uuid="d55f4481-b5fb-41af-81ae-e510af3efa8f"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="415" y="34" width="69" height="20" uuid="0b68bbbf-609c-4ccb-88f4-04988844e81e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="484" y="34" width="40" height="20" uuid="10b38824-97bd-40f8-bc51-fac46804d9ab"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
